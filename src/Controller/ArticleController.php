@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+// use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ArticleController extends Controller
@@ -23,31 +23,31 @@ class ArticleController extends Controller
    * @Route("/login", name="login")
    * @Method({"GET"})
    */
-  public function login(Request $request, AuthenticationUtils $utils)
-  {
-    $error = $utils->getLastAuthenticationError();
+  // public function login(Request $request, AuthenticationUtils $utils)
+  // {
+  //   $error = $utils->getLastAuthenticationError();
     
-    $lastUserName = $utils->getLastUserName();
+  //   $lastUserName = $utils->getLastUserName();
 
-    return $this->render('login.html.twig', [
-      'error' => $error,
-      'last_userName' => $lastUserName
-    ]);
+  //   return $this->render('login.html.twig', [
+  //     'error' => $error,
+  //     'last_userName' => $lastUserName
+  //   ]);
 
     // $article = new Article();
 
-    $form = $this->createFormBuilder()
-      ->add('_name', TextType::Class)
-      ->add('_password', PasswordType::class)
-      ->add('save', SubmitType::class, array(
-        'label' => 'Login',
-        'attr' => array('class' => 'btn btn-primary mt-3')
-      ))
-      ->getForm();
+  //   $form = $this->createFormBuilder()
+  //     ->add('_name', TextType::Class)
+  //     ->add('_password', PasswordType::class)
+  //     ->add('save', SubmitType::class, array(
+  //       'label' => 'Login',
+  //       'attr' => array('class' => 'btn btn-primary mt-3')
+  //     ))
+  //     ->getForm();
 
-    $form->handleRequest($request);
+  //   $form->handleRequest($request);
 
-  }
+  // }
 
 
   /**
